@@ -1,4 +1,4 @@
-var localData = JSON.parse(localStorage.getItem('transactions'));
+// var localData = JSON.parse(localStorage.getItem('transactions'));
 // var transactions = localData !== null ? localData : [];
 
 
@@ -19,55 +19,58 @@ function addTransac() {
 
     if (desc === "" || isNaN(amount) || amount <= 0) {
         alert("Please enter a valid positive amount");
-        return;
-    }
-    var transaction = {
-        id: Math.floor(Math.random() * 100000),
-        text: textInput.value,
-        amount: Number(amountInput.value)
-    };
-    transactions.push(transaction);
-    updateLocalStorage()
+    } else {
+        expense += amount;
+        balance -= amount;
+
+        yourBalance.innerText = `$${balance.toFixed(2)}`;
+        yourExpense.innerText = `$${expense.toFixed(2)}`;
+
+        textInput.value = "";
+        amountInput.value = "";
 
 
-    expense += amount;
-    balance -= amount;
+        var row = document.createElement("tr");
 
-    yourBalance.innerText = `$${balance.toFixed(2)}`;
-    yourExpense.innerText = `$${expense.toFixed(2)}`;
+        var counter = row.childElementCount;
 
-    textInput.value = "";
-    amountInput.value = "";
 
-    var row = document.createElement("tr");
-    row.innerHTML = `
+        row.innerHTML = `
     <td>${new Date().toLocaleDateString()}</td>
     <td>${desc}</td>
     <td class="amountRed">-${amount}</td>
     <td><button class="delete-btn">Delete</button></td>
   `;
-
-    var deleteBtn = row.querySelector(".delete-btn");
-
-    deleteBtn.onclick = function () {
-        balance += amount;
-        expense -= amount;
-        yourBalance.innerText = `$${balance.toFixed(2)}`;
-        yourExpense.innerText = `$${expense.toFixed(2)}`;
-        row.remove();
-    };
-
-    transactionList.appendChild(row);
+        row.setAttribute("id", counter)
 
 
+        var deleteBtn = row.querySelector(".delete-btn");
 
+        deleteBtn.onclick = function () {
+            balance += amount;
+            expense -= amount;
+            yourBalance.innerText = `$${balance.toFixed(2)}`;
+            yourExpense.innerText = `$${expense.toFixed(2)}`;
+            row.remove();
+        };
+
+        transactionList.appendChild(row);
+        // var transaction = {
+        //     id: Math.floor(Math.random() * 100000),
+        //     text: textInput.value,
+        //     amount: Number(amountInput.value)
+        // };
+        // transactions.push(transaction);
+        // updateLocalStorage()
+
+
+    }
 
 }
 
-function updateLocalStorage() {
-    localStorage.setItem('transactions', JSON.stringify(transactions));
-}
 
-
+// function updateLocalStorage() {
+//     localStorage.setItem('transactions', JSON.stringify(transactions));
+// }
 
 

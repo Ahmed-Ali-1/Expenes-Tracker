@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -17,10 +21,10 @@ body {
 }
 
 .mainDiv {
-  max-width: 600px;
+  max-width: 500px;
   padding: 40px 20px;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px 6px gray;
+  box-shadow: 0 2px 12px 4px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   margin: 20px auto;
 }
@@ -37,29 +41,27 @@ body {
 
 .balanceDiv>p {
   color: var(--colour--);
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .balance {
   margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.Transaction {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .income {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  color: #000;
-  border-radius: 20px;
-  padding: 20px 80px;
+  gap: 8px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.05);
+  padding: 16px 20px;
   background-color: rgb(240, 240, 240);
 }
 
@@ -67,11 +69,28 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #000;
-  gap: 20px;
-  padding: 20px 80px;
-  border-radius: 20px;
+  gap: 8px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.05);
   background-color: var(--pink--);
+}
+
+.Expenses h4,
+.income h4 {
+  font-size: 16px;
+  font-weight: 600;
+
+
+}
+
+.Expenses p,
+.income p {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+
+
 }
 
 form {
@@ -82,7 +101,7 @@ form {
 }
 
 form h3 {
-  color: #000;
+  font-size: 16px;
 
 }
 
@@ -96,9 +115,21 @@ form h3 {
   gap: 8px;
 }
 
+label {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+
+label>span {
+  font-size: 12px;
+}
+
 input {
   border-radius: 6px;
-  padding: 10px 10px;
+  padding: 8px 10px;
+  outline: none;
+  border: 1px solid #ccc;
 }
 
 table {
@@ -110,7 +141,8 @@ table {
 th,
 td {
 
-  padding: 8px;
+  padding: 8px 0;
+
   text-align: center;
 }
 
@@ -134,7 +166,8 @@ td {
 form>button {
   background-color: var(--colour--);
   color: #fff;
-  padding: 10px 20px;
+  padding: 8px 10px;
+  font-size: 12px;
   border: none;
   border-radius: 6px;
   font-weight: 600;
@@ -144,14 +177,24 @@ form>button {
   margin-top: 10px;
   border-radius: 20px;
 
+
+}
+
+.history h2 {
+  font-size: 18px;
+  color: var(--colour--);
 }
 
 .tablehead {
   background-color: var(--dash--);
+  font-size: 14px;
+  font-weight: 200;
 
 }
 
 #transactionList {
+  text-align: left;
   border-top: 1px solid #ddd;
+  border-radius: 20px;
   border-bottom: 1px solid #ddd;
 }
