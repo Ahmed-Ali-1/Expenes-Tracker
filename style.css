@@ -17,7 +17,7 @@ body {
 }
 
 .mainDiv {
-  max-width: 800px;
+  max-width: 600px;
   padding: 40px 20px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 6px gray;
@@ -59,7 +59,6 @@ body {
   gap: 20px;
   color: #000;
   border-radius: 20px;
-
   padding: 20px 80px;
   background-color: rgb(240, 240, 240);
 }
@@ -78,7 +77,13 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+form h3 {
+  color: #000;
+
 }
 
 .btn {
@@ -88,7 +93,7 @@ form {
 .form-control {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
 input {
@@ -104,7 +109,7 @@ table {
 
 th,
 td {
-  border: 1px solid #ddd;
+
   padding: 8px;
   text-align: center;
 }
@@ -120,4 +125,33 @@ td {
 
 .delete-btn:hover {
   background-color: darkred;
+}
+
+.amountRed {
+  color: #ed4632;
+}
+
+form>button {
+  background-color: var(--colour--);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.history {
+  margin-top: 10px;
+  border-radius: 20px;
+
+}
+
+.tablehead {
+  background-color: var(--dash--);
+
+}
+
+#transactionList {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }

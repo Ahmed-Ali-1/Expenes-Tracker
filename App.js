@@ -43,7 +43,7 @@ function addTransac() {
     row.innerHTML = `
     <td>${new Date().toLocaleDateString()}</td>
     <td>${desc}</td>
-    <td>-${amount}</td>
+    <td class="amountRed">-${amount}</td>
     <td><button class="delete-btn">Delete</button></td>
   `;
 
