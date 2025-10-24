@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+
+:root {
+    --bgColour: #af7eeb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: #e3e9ff;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.main {
+    justify-content: center;
+    display: flex;
+    padding: 130px 0;
+}
+
+.login {
+    border-radius: 4px;
+    background-color: #fff;
+    width: 35%;
+    padding: 60px 40px;
+}
+
+.image {
+    width: 35%;
+    height: 500px;
+    position: relative;
+}
+
+.mobile-img>img {
+    width: 100%;
+    height: 500px;
+}
+
+.bg-colour {
+    background-color: rgba(175, 126, 235, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.login-text>h1 {
+    text-align: left;
+    font-size: 30px;
+    font-family: "National Park", sans-serif;
+    margin-bottom: 25px;
+}
+
+.login-text>h1:first-child {
+    text-decoration: underline;
+    text-decoration-color: var(--bgColour);
+}
+
+.input-group {
+    height: 100%;
+    width: 100%;
+}
+
+.input-group input {
+    border: none;
+    border-bottom: 1.5px solid #aaaaaa;
+    height: 100%;
+    padding: 15px 0px 15px 25px;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    color: #aaaaaa;
+    font-family: "National Park", sans-serif;
+    font-weight: 500;
+
+}
+
+#userName {
+    text-transform: capitalize;
+}
+
+.input-box>i {
+    color: var(--bgColour);
+    position: relative;
+    top: 38px;
+}
+
+.forget {
+    padding: 15px 0;
+}
+
+.forget>a {
+    font-family: "National Park", sans-serif;
+    font-weight: 500;
+    color: var(--bgColour);
+    text-decoration: none;
+}
+
+.login-btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px 0;
+    color: #fff;
+    font-size: 18px;
+    background-color: var(--bgColour);
+    font-family: "National Park", sans-serif;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+}
+
+.sign-up {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 500;
+    font-family: "National Park", sans-serif;
+}
+
+.sign-up>a {
+    font-weight: 500;
+    font-family: "National Park", sans-serif;
+    color: var(--bgColour);
+}
+
+.image {
+    position: relative;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.image-text>h1 {
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: -1px;
+    font-weight: 600;
+    font-family: "National Park", sans-serif;
+}
+
+.image-text>p {
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: -1px;
+    font-weight: 600;
+    font-family: "National Park", sans-serif;
+
+}
+
+@media screen and (max-width: 900px) {
+    .login {
+        width: 90% !important;
+
+    }
+
+    .image-text>h1 {
+        font-size: 26px;
+    }
+
+    .image {
+        width: 90%;
+    }
+
+    .image-text {
+        padding: 0px !important;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
