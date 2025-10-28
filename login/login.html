@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./login.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -19,36 +19,40 @@
                 <div class="main">
                     <div class="login">
                         <div class="login-text">
-                            <h1 id="title"><span>Sign</span>Up</h1>
+                            <h1 id="title"><span>Lo</span>gin</h1>
                         </div>
 
-                        <form>
+                        <form action="">
+
                             <div class="input-group">
                                 <div class="input-box">
-                                    <i class="fa-solid fa-user"></i>
-                                    <input type="name" name="name" id="userName" placeholder="Enter your name">
-                                </div>
-                                <div class="input-box">
                                     <i class="fa-solid fa-message"></i>
-                                    <input type="email" name="email" id="userEmail" placeholder="Enter your email">
+                                    <input type="email" name="email" id="loginEmail" placeholder="Enter your email">
                                 </div>
                                 <div class="input-box">
                                     <i class="fa-solid fa-lock"></i>
-                                    <input type="password" name="password" id="userPassword"
+                                    <input type="password" name="password" id="loginPassword"
                                         placeholder="Enter your password">
                                 </div>
                             </div>
-                            <button class="login-btn" type="button" onclick="signUp()">sign up</button>
-                        </form>
 
+                            <div class="forget">
+                                <a href="">Forgot password?</a>
+                            </div>
+
+                            <button class="login-btn" type="button" id="loginBtn">Login</button>
+                            <div id="account" class="sign-up">Don't have an account? <a
+                                    href="../signup/signup.html">SignUp</a>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <script src="./assets/js/script.js"></script>
+    <script src="./login.js"></script>
 </body>
 
 </html>
