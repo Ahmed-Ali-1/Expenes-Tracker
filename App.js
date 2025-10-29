@@ -1,6 +1,4 @@
 var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-// var saveUserTransaction = "Name: " + currentUser.Name + " || " + "Email: " + currentUser.Email;
-
 
 if (!currentUser) {
     alert("Please Login first!");
@@ -10,15 +8,12 @@ if (!currentUser) {
 let income = 1000;
 let balance = 1000;
 let expense = 0;
-// var transactionId = users.length > 0 ? users[users.length - 1].id : 0;
 
 var yourBalance = document.getElementById("yourBalance")
 var yourExpense = document.getElementById("yourExpense")
 var textInput = document.getElementById("textInput")
 var amountInput = document.getElementById("amountInput")
 var transactionList = document.getElementById("transactionList");
-
-
 var openTransactionBtn = document.getElementById("openTransactionBtn");
 var addTransactionDiv = document.querySelector(".addTransactionDiv");
 
@@ -26,9 +21,6 @@ openTransactionBtn.addEventListener("click", function () {
     addTransactionDiv.style.display = "block";
     openTransactionBtn.style.display = "none";
 })
-
-
-
 
 var addTransaction = document.getElementById("addTransactionBtn")
 addTransaction.addEventListener("click", function () {
@@ -53,13 +45,12 @@ addTransaction.addEventListener("click", function () {
     textInput.value = "";
     amountInput.value = "";
 
-
     var row = document.createElement("tr");
     row.innerHTML = `
         <td>${new Date().toLocaleDateString()}</td>
         <td>${desc}</td>
         <td class="amountRed">-${amount}</td>
-        <td><button class="delete-btn">Delete</button></td>`;
+        <td><button class="delete-btn">Delete</button></td>`
 
     var deleteBtn = row.querySelector(".delete-btn");
     deleteBtn.onclick = function () {
@@ -71,9 +62,7 @@ addTransaction.addEventListener("click", function () {
     };
     transactionList.appendChild(row)
 
-
     var usersTransactionsArr = JSON.parse(localStorage.getItem("usersTransactions")) || [];
-
     var userHistory = {
         id: currentUser.id,
         transactionHistoryArr: []
@@ -86,36 +75,7 @@ addTransaction.addEventListener("click", function () {
     }
 
     userHistory.transactionHistoryArr.push(transaction);
-
     usersTransactionsArr.push(userHistory);
-
     localStorage.setItem("usersTransactions", JSON.stringify(usersTransactionsArr));
 
-    // getTransations();
 })
-
-// function getTransations() {
-//     var usersTransactionsArr = JSON.parse(localStorage.getItem("usersTransactions")) || [];
-//     transactionList.innerText = "";
-//     var dataFound = false;
-//     for (var index in usersTransactionsArr) {
-//         if (usersTransactionsArr[index].id == currentUser.id) {
-//             dataFound = true;
-//             var transactionHistoryArr = usersTransactionsArr[index].transactionHistoryArr
-//             transactionHistoryArr.map(function (kuchBHI) {
-//                 var row = document.createElement("tr");
-//                 row.innerHTML = `
-        
-//         <td>${kuchBHI.desc}</td>
-//         <td class="amountRed">-${kuchBHI.amount}</td>
-//         <td><button class="delete-btn">Delete</button></td>`;
-//             })
-//         }
-//     }
-
-//     if (!dataFound) {
-//         transactionList.innerText = "No Transactions Found!";
-//     }
-// }
-
-// getTransations()
